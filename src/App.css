@@ -29,3 +29,13 @@ body {
 a {
   text-decoration: none;
 }
+
+.wrapper {
+  padding-top: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  row-gap: 1em;
+  grid-auto-rows: 300px;
+  background-color: rgb(203, 255, 255);
+}

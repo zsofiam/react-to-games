@@ -1,0 +1,51 @@
+.card {
+  background-color: rgb(166, 255, 255);
+  margin: 10px;
+  text-align: center;
+  cursor: "pointer";
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+p {
+  text-align: center;
+  justify-content: center;
+}
+img {
+  max-width: 80%;
+  height: auto;
+  max-height: 50%;
+}
+.year {
+  align-self: start;
+}
+.game-link {
+  margin-bottom: 0;
+}
+.game-link a {
+  margin-bottom: 0;
+}
+.game-link a:hover {
+  color: darkblue;
+}
+.favourites-container {
+  height: 10%;
+}
+.favourites {
+  background-color: blue;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  padding: 3%;
+  cursor: pointer;
+}
+.favourites i {
+  color: #fff;
+}
+.properties-container {
+  height: 80%;
+}
