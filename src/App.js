@@ -1,3 +1,5 @@
+import Header from './components/layout/Header';
+
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -16,21 +18,18 @@ const App = () => {
   }, [])
 
   return (
-    <div className="App">
-      <Router>
-      <div className="App">
-        <div className="container">
-          <Route path="/" render ={props => (
+    <Router>
+    <div className="container">
+      <Header />
+      <Route path="/" render ={props => (
             <>
               <div className="wrapper">
           <BoardgamesList boardgames = {state.boardgames}/>
             </div>
             </>
           )}/>
-        </div>
-      </div>
-      </Router>
     </div>
+    </Router>
   );
 }
 
