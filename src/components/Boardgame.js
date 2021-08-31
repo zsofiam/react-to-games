@@ -20,8 +20,8 @@ const Boardgame = (props) => {
                 <small>{'Rating: '}{rating}</small>
                 <div className='year'>{yearPublished}</div>
                 </div>
-                <div className='wishlist-container'>
-                <div className='wishlist'><span>Add To Wish List</span></div>
+                <div className='favourites-container'>
+                <div className='favourites'><span>Add To Favourites</span></div>
                 </div>
             </div>
         )

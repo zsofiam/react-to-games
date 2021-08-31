@@ -32,10 +32,10 @@ img {
 .game-link a:hover {
   color: darkblue;
 }
-.wishlist-container {
+.favourites-container {
   height: 10%;
 }
-.wishlist {
+.favourites {
   background-color: blue;
   width: 100%;
   color: #fff;
@@ -43,7 +43,7 @@ img {
   padding: 3%;
   cursor: pointer;
 }
-.wishlist i {
+.favourites i {
   color: #fff;
 }
 .properties-container {
