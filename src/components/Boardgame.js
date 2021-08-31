@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import './Boardgame.css';
+
 
 const Boardgame = (props) => {
     const getStyle =  {
@@ -11,9 +13,10 @@ const Boardgame = (props) => {
             cursor: 'pointer'
     }
     
-        const{name, gameId} = props.boardgame;
+        const{name, gameId, image} = props.boardgame;
         return (
             <div className="card" style={getStyle}>
+                <img src={`${image}`} alt="Boardgame"></img>
                 <p>
                 <Link to={`/boardgame/${gameId}`}>
                 {' '}
