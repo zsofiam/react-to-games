@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function GameDetail() {
+    const { gameId } = useParams();
+    const gameDetailUrl = `https://bgg-json.azurewebsites.net/thing/${gameId}`;
     const [gameDetails, setGameDetails] = useState({});
     useEffect(() => {
-        axios.get('https://bgg-json.azurewebsites.net/thing/133993')
+        axios.get(gameDetailUrl)
         .then(res => setGameDetails(res.data));
     }, []);
 
