@@ -25,14 +25,14 @@ const App = () => {
     <div className="container">
       <Router>
         <Header />
-        <Route path="/" render ={props => (
+        <Route exact path="/" render ={props => (
               <>
                 <div className="wrapper">
             <BoardgamesList boardgames = {state.boardgames}/>
               </div>
               </>
             )}/>
-        <Route path="/details/:gameId" component={GameDetail}/>
+        <Route path="/boardgame/:gameId" component={GameDetail}/>
       </Router>
     </div>
 
