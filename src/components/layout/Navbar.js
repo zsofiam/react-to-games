@@ -4,7 +4,7 @@ export default function Navbar() {
             <span>Welcome {' '}
                 <span className="username">User</span>!
             </span>
-            <a href="/">Favourite games: <span id="favourite-counter">0</span></a>
+            <a href="/favourites">Favourite games: <span id="favourite-counter">2</span></a>
             <form>
             <input
                 type="text"
