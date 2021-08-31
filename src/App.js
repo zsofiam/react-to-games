@@ -1,10 +1,13 @@
+import React, { useState, useEffect } from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import axios from 'axios';
+
 import Header from './components/layout/Header';
+import GameDetail from './components/GameDetail';
+import BoardgamesList from './components/BoardgamesList';
 
 import './App.css';
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import axios from 'axios';
-import BoardgamesList from './components/BoardgamesList';
+
 
 const App = () => {
   const [state, setState] = useState({
@@ -17,19 +20,22 @@ const App = () => {
     .then(res => setState({boardgames: res.data}));
   }, [])
 
+
   return (
-    <Router>
     <div className="container">
-      <Header />
-      <Route path="/" render ={props => (
-            <>
-              <div className="wrapper">
-          <BoardgamesList boardgames = {state.boardgames}/>
-            </div>
-            </>
-          )}/>
+      <Router>
+        <Header />
+        <Route exact path="/" render ={props => (
+              <>
+                <div className="wrapper">
+            <BoardgamesList boardgames = {state.boardgames}/>
+              </div>
+              </>
+            )}/>
+        <Route path="/boardgame/:gameId" component={GameDetail}/>
+      </Router>
     </div>
-    </Router>
+
   );
 }
 
