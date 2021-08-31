@@ -4,26 +4,25 @@ import './Boardgame.css';
 
 
 const Boardgame = (props) => {
-    const getStyle =  {
-        
-            backgroundColor:'#f4f4f4',
-            padding: '10px',
-            borderBottom: '1px #ccc dotted',
-            textAlign: 'left',
-            cursor: 'pointer'
-    }
     
-        const{name, gameId, image} = props.boardgame;
+        const{name, gameId, image, rating, yearPublished} = props.boardgame;
         return (
-            <div className="card" style={getStyle}>
+            <div className="card">
+                <div className="properties-container">
                 <img src={`${image}`} alt="Boardgame"></img>
-                <p>
+                <p className="game-link">
                 <Link to={`/boardgame/${gameId}`}>
-                {' '}
+              
                 {name}
-                {}
+                
                 </Link>
                 </p>
+                <small>{'Rating: '}{rating}</small>
+                <div className='year'>{yearPublished}</div>
+                </div>
+                <div className='wishlist-container'>
+                <div className='wishlist'><span>Add To Wish List</span></div>
+                </div>
             </div>
         )
 }

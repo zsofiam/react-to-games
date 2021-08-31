@@ -1,13 +1,51 @@
 .card {
-  border-radius: 20%;
+  background-color: rgb(166, 255, 255);
+  margin: 10px;
+  text-align: center;
+  cursor: "pointer";
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 p {
   text-align: center;
   justify-content: center;
-  margin-top: 30px;
 }
 img {
-  height: 50px;
-  width: 50px;
+  max-width: 80%;
+  height: auto;
+  max-height: 50%;
+}
+.year {
+  align-self: start;
+}
+.game-link {
+  margin-bottom: 0;
+}
+.game-link a {
+  margin-bottom: 0;
+}
+.game-link a:hover {
+  color: darkblue;
+}
+.wishlist-container {
+  height: 10%;
+}
+.wishlist {
+  background-color: blue;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  padding: 3%;
+  cursor: pointer;
+}
+.wishlist i {
+  color: #fff;
+}
+.properties-container {
+  height: 80%;
 }
