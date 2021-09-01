@@ -1,10 +1,19 @@
 export default function Navbar() {
+    let favourites = JSON.parse(localStorage.getItem("favourites"));
     return (
         <div className="navbar">
             <span>Welcome {' '}
                 <span className="username">User</span>!
             </span>
-            <a href="/favourites">Favourite games: <span id="favourite-counter">2</span></a>
+            <a href="/favourites">Favourite games:{' '} 
+                <span id="favourite-counter">
+                    {favourites
+                    ?
+                    favourites.length
+                    :
+                    "0"}
+                </span>
+            </a>
             <form>
             <input
                 type="text"
