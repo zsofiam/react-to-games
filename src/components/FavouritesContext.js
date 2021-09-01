@@ -1,33 +1,21 @@
 import axios from 'axios';
-import React, { createContext } from 'react';
+import React, { useState, createContext } from 'react';
 
 export const FavouritesContext = createContext();
 
-export const FavouritesProvider = props => {
-    let favouriteGames = [
-        {
-            gameId: 333333,
-            name: "Test Game",
-            image: "https://images.unsplash.com/photo-1611371805429-8b5c1b2c34ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-            rating: 8.3333,
-            yearPublished: 2020
-        },
-        {
-            gameId: 55555,
-            name: "Test Game 2",
-            image: "https://images.unsplash.com/photo-1530328411047-7063dbd29029?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
-            rating: 7.123,
-            yearPublished: 2021
-        }
-    ];
+export const FavouritesProvider = (props) => {
+    let [favouriteGames, setfavouriteGames] = useState(JSON.parse(localStorage.getItem("favourites")) || []);
     const toggleFavouriteGames = (gameId) => {
+        //favouriteGames = localStorage.getItem("favourites");
         const newFavouriteGames = favouriteGames.filter(favourite => favourite.gameId !== gameId);
         if (favouriteGames.length === newFavouriteGames.length){
-            axios.get(`https://bgg-json.azurewebsites.net/thing/${gameId}`)
-            .then(res => favouriteGames.push(res.data));
+            axios.get(`https://bgg-json.azurewebsites.net/thing/${gameId}?callback=myCallback`)
+            .then(res => favouriteGames.push(res.data))
+            .then(localStorage.setItem("favourites", favouriteGames));
             
         } else {
-           favouriteGames = [...newFavouriteGames];
+           favouriteGames = setfavouriteGames([...newFavouriteGames]);
+           localStorage.setItem("favourites", favouriteGames);
         }
         console.log(favouriteGames);
     }
