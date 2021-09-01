@@ -24,7 +24,7 @@ export default function GameDetail() {
             <p>Duration: <span id="playingTime">{gameDetails.playingTime}</span>{' '}min</p>
             <p>Rating: <span id="rating">{Number.parseFloat(gameDetails.rating).toFixed(1)}</span></p>
             <p>Year published: <span id="yearPublished">{gameDetails.yearPublished}</span></p>
-            <button id="favouriteButton">Select</button>
+            <button className="favouritesButton">Select</button>
             </div>
             </>
             :
