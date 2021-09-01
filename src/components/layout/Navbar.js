@@ -1,5 +1,4 @@
 import { useContext } from "react";
-//import { PageContext } from "../../App";
 import PageContext from "../../contexts/PageContext";
 
 export default function Navbar() {

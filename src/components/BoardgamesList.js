@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import Boardgame from "./Boardgame";
-//import { PageContext } from "../App";
 import PageContext from "../contexts/PageContext";
 
 const BoardgamesList = (props) => {
