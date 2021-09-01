@@ -11,13 +11,14 @@ export const FavouritesProvider = (props) => {
         if (favouriteGames.length === newFavouriteGames.length){
             axios.get(`https://bgg-json.azurewebsites.net/thing/${gameId}?callback=myCallback`)
             .then(res => favouriteGames.push(res.data))
-            .then(localStorage.setItem("favourites", favouriteGames));
+            .then(localStorage.setItem("favourites", JSON.stringify(favouriteGames)));
             
         } else {
            favouriteGames = setfavouriteGames([...newFavouriteGames]);
            localStorage.setItem("favourites", favouriteGames);
         }
         console.log(favouriteGames);
+        console.log("2:", localStorage.getItem("favourites"), JSON.parse(localStorage.getItem("favourites"))[0]);
     }
 
     return (
