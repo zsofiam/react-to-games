@@ -1,9 +1,10 @@
-import React, { useState, createContext } from 'react';
+import axios from 'axios';
+import React, { createContext } from 'react';
 
 export const FavouritesContext = createContext();
 
 export const FavouritesProvider = props => {
-    const [favouriteGames, setFavouriteGames] = useState([
+    let favouriteGames = [
         {
             gameId: 333333,
             name: "Test Game",
@@ -18,9 +19,20 @@ export const FavouritesProvider = props => {
             rating: 7.123,
             yearPublished: 2021
         }
-    ]);
+    ];
+    const toggleFavouriteGames = (gameId) => {
+        const newFavouriteGames = favouriteGames.filter(favourite => favourite.gameId !== gameId);
+        if (favouriteGames.length === newFavouriteGames.length){
+            axios.get(`https://bgg-json.azurewebsites.net/thing/${gameId}`)
+            .then(res => favouriteGames.push(res.data));
+            
+        } else {
+           favouriteGames = [...newFavouriteGames];
+        }
+        console.log(favouriteGames);
+    }
 
     return (
-       <FavouritesContext.Provider  value={[favouriteGames, setFavouriteGames]}>{props.children}</FavouritesContext.Provider>
+       <FavouritesContext.Provider  value={[favouriteGames, toggleFavouriteGames]}>{props.children}</FavouritesContext.Provider>
     );
 }
