@@ -15,7 +15,6 @@ const BoardgamesList = (props) => {
     axios.get('https://bgg-json.azurewebsites.net/collection/edwalter')
     .then(res => {
         setState({boardgames: res.data});
-        console.log("App function useEffect");
     });
     }, [])
 

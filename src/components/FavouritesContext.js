@@ -3,7 +3,6 @@ import React, { useState, createContext } from 'react';
 export const FavouritesContext = createContext();
 
 export const FavouritesProvider = props => {
-    console.log("FavouritesProvider function start");
     const [favouriteGames, setFavouriteGames] = useState([
         {
             gameId: 333333,
