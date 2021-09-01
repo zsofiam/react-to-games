@@ -17,7 +17,7 @@ const Boardgame = (props) => {
                 
                 </Link>
                 </p>
-                <small>{'Rating: '}{rating}</small>
+                <small>{'Rating: '}{Number.parseFloat(rating).toFixed(1)}</small>
                 <div className='year'>{yearPublished}</div>
                 </div>
                 <div className='favourites-container'>
