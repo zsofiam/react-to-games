@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { FavouritesContext } from "./../FavouritesContext";
+import { PageContext } from "../../contexts/PageContext";
 
 export default function Navbar() {
-    //let favourites = JSON.parse(localStorage.getItem("favourites"));
-    const favourites = useContext(FavouritesContext);
+  //let favourites = JSON.parse(localStorage.getItem("favourites"));
+  const favourites = useContext(FavouritesContext);
+  const { decrementPageNumber, incrementPageNumber } = useContext(PageContext);
     return (
         <div className="navbar">
             <span>Welcome {' '}
@@ -18,17 +20,12 @@ export default function Navbar() {
                     "0"}
                 </span>
             </a>
-            <form>
-            <input
-                type="text"
-                placeholder="Search"
-                className="mr-2"
-                name="Search"
-            />
-            <input type="submit" value="Search"/>
-            </form>
-            <a href="/">Previous</a>
-            <a href="/">Next</a>
+            <a href="/" onClick={decrementPageNumber}>
+              Previous
+            </a>
+            <a href="/" onClick={incrementPageNumber}>
+              Next
+            </a>
         </div>
     );
 }
