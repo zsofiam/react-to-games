@@ -21,14 +21,12 @@ export default function Navbar() {
         />
         <input type="submit" value="Search" />
       </form>
-      <button onClick={decrementPageNumber}>Previous</button>
-      <button onClick={incrementPageNumber}>Next</button>
-      {/* <a href="/" onClick={decrementPageNumber}>
+      <a href="/" onClick={decrementPageNumber}>
         Previous
       </a>
       <a href="/" onClick={incrementPageNumber}>
         Next
-      </a> */}
+      </a>
     </div>
   );
 }
