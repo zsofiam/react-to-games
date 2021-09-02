@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import PageContext from "../../contexts/PageContext";
+import { PageContext } from "../../contexts/PageContext";
 
 export default function Navbar() {
   const { decrementPageNumber, incrementPageNumber } = useContext(PageContext);
