@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import PageContext from "../../contexts/PageContext";
+import { PageContext } from "../../contexts/PageContext";
 
 export default function Navbar() {
   const { decrementPageNumber, incrementPageNumber } = useContext(PageContext);
@@ -21,12 +21,14 @@ export default function Navbar() {
         />
         <input type="submit" value="Search" />
       </form>
-      <a href="/" onClick={decrementPageNumber}>
+      <button onClick={decrementPageNumber}>Previous</button>
+      <button onClick={incrementPageNumber}>Next</button>
+      {/* <a href="/" onClick={decrementPageNumber}>
         Previous
       </a>
       <a href="/" onClick={incrementPageNumber}>
         Next
-      </a>
+      </a> */}
     </div>
   );
 }
