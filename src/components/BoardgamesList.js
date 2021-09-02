@@ -18,9 +18,6 @@ const BoardgamesList = () => {
       );
   }, [pageNumber, itemsPerPage]);
 
-  console.log(pageNumber);
-  console.log(itemsPerPage);
-
   const sliceItems = (boardgames, pageNumber, itemsPerPage) => {
     const startItem = (pageNumber - 1) * itemsPerPage;
     const endItem = startItem + itemsPerPage;

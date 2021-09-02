@@ -11,8 +11,6 @@ export const PageProvider = (props) => {
     if (pageNumber < 545 / itemsPerPage + 1) {
       updatePageNumber(pageNumber + 1);
     }
-
-    console.log(pageNumber);
   }
 
   const decrementPageNumber = (e) => {
@@ -20,7 +18,6 @@ export const PageProvider = (props) => {
     if (pageNumber > 1) {
       updatePageNumber(pageNumber - 1);
     }
-    console.log(pageNumber);
   };
 
   return (
