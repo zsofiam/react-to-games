@@ -8,28 +8,28 @@ export const FavouritesProvider = (props) => {
     const [favouriteGames, setFavouriteGames] = useState(JSON.parse(localStorage.getItem("favourites")) || []);
     console.log("before toggle", favouriteGames);
     const toggleFavouriteGames = (gameId) => {
+        setFavouriteGames(JSON.parse(localStorage.getItem("favourites")));
         if (favouriteGames.length === 0){
-            console.log("if")
+            console.log("main if")
             axios.get(`https://bgg-json.azurewebsites.net/thing/${gameId}`)
             .then(res => {
-                const copyOfFavourites = [...favouriteGames, res.data];
-                setFavouriteGames(copyOfFavourites);
+                setFavouriteGames([...favouriteGames, res.data]);
             })
             .then(localStorage.setItem("favourites", JSON.stringify(favouriteGames)));
         } else {
-            console.log("else");
-            setFavouriteGames(JSON.parse(localStorage.getItem("favourites")));
+            console.log("main else");
             const newFavouriteGames = favouriteGames.filter(favourite => favourite.gameId !== gameId);
             if (favouriteGames.length === newFavouriteGames.length){
+                console.log("second if");
                 axios.get(`https://bgg-json.azurewebsites.net/thing/${gameId}`)
                 .then(res => {
-                    const copyOfFavourites = [...favouriteGames, res.data];
-                    setFavouriteGames(copyOfFavourites);
+                    setFavouriteGames([...favouriteGames, res.data]);
                 })
                 .then(localStorage.setItem("favourites", JSON.stringify(favouriteGames)));
                 
             } else {
-            setFavouriteGames(newFavouriteGames => [...newFavouriteGames]);
+            console.log("second else");
+            setFavouriteGames([...newFavouriteGames]);
             localStorage.setItem("favourites", favouriteGames);
             }
         }
