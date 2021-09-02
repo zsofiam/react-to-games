@@ -1,5 +1,9 @@
+import React, { useContext } from "react";
+import { FavouritesContext } from "./../FavouritesContext";
+
 export default function Navbar() {
-    let favourites = JSON.parse(localStorage.getItem("favourites"));
+    //let favourites = JSON.parse(localStorage.getItem("favourites"));
+    const favourites = useContext(FavouritesContext);
     return (
         <div className="navbar">
             <span>Welcome {' '}
@@ -7,9 +11,9 @@ export default function Navbar() {
             </span>
             <a href="/favourites">Favourite games:{' '} 
                 <span id="favourite-counter">
-                    {favourites
+                    {favourites[0]
                     ?
-                    favourites.length
+                    favourites[0].length
                     :
                     "0"}
                 </span>

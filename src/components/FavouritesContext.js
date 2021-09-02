@@ -33,7 +33,7 @@ export const FavouritesProvider = (props) => {
             //localStorage.setItem("favourites", JSON.stringify(favouriteGames));
             }
         }
-        console.log(favouriteGames);
+        setFavouriteGames([...favouriteGames]);
     }
 
     useEffect(() => {
