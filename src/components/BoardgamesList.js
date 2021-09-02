@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const BoardgamesList = (props) => {
     const favourites = useContext(FavouritesContext);
-    console.log("Favourites: ", favourites);
     const [state, setState] = useState({
         boardgames: [ 
         ]
