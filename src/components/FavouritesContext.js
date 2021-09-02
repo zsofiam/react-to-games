@@ -27,7 +27,7 @@ export const FavouritesProvider = (props) => {
             // else gameId is found, game should be removed
             } else {
             setFavouriteGames([...newFavouriteGames]);
-            localStorage.setItem("favourites", favouriteGames);
+            localStorage.setItem("favourites", JSON.stringify(favouriteGames));
             }
         }
         console.log(favouriteGames);
