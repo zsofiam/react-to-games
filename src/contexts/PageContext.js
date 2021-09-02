@@ -25,12 +25,12 @@ export const PageProvider = (props) => {
 
   return (
     <PageContext.Provider
-      value={[
+      value={{
         pageNumber,
         itemsPerPage,
         incrementPageNumber,
         decrementPageNumber,
-      ]}
+      }}
     >
       {props.children}
     </PageContext.Provider>
