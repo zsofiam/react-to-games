@@ -21,10 +21,10 @@ export default function Navbar() {
                 </span>
             </a>
             <a href="/" onClick={decrementPageNumber}>
-              Previous
+              Previous Page
             </a>
             <a href="/" onClick={incrementPageNumber}>
-              Next
+              Next Page
             </a>
         </div>
     );
