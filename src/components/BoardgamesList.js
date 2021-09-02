@@ -3,17 +3,19 @@ import Boardgame from "./Boardgame";
 import { PageContext } from "../contexts/PageContext";
 import axios from "axios";
 
-const BoardgamesList = (props) => {
-  const {pageNumber, itemsPerPage} = useContext(PageContext);
+const BoardgamesList = () => {
+  const { pageNumber, itemsPerPage } = useContext(PageContext);
 
   const [state, setState] = useState({
-    boardgames: []
+    boardgames: [],
   });
 
   useEffect(() => {
     axios
       .get("https://bgg-json.azurewebsites.net/collection/edwalter")
-      .then((res) => setState({boardgames: sliceItems(res.data, pageNumber, itemsPerPage) }));
+      .then((res) =>
+        setState({ boardgames: sliceItems(res.data, pageNumber, itemsPerPage) })
+      );
   }, [pageNumber, itemsPerPage]);
 
   console.log(pageNumber);

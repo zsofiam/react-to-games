@@ -15,7 +15,7 @@ const App = () => {
           <Route
             exact
             path="/"
-            render={(props) => (
+            render={() => (
               <>
                 <div className="wrapper">
                   <BoardgamesList />
