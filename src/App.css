@@ -17,7 +17,7 @@
 .header {
   margin: 0 5px 0 5px;
   padding: 0;
-  background-color: rgb(166, 255, 255);
+  background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
@@ -31,7 +31,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: rgb(203, 255, 255);
+  background-color: rgb(241, 241, 241);
 }
 
 a {
@@ -55,9 +55,70 @@ button {
   column-gap: 10px;
   row-gap: 1em;
   grid-auto-rows: 300px;
-  background-color: rgb(203, 255, 255);
+  background-color: rgb(241, 241, 241);
 }
 
 #details p {
   text-align: left;
+}
+.firstColumn {
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+}
+.secondColumn {
+  width: 60%;
+  padding: 10px;
+}
+.firstRow {
+  display: inline;
+  padding: 10px;
+}
+.secondRow {
+  display: inline;
+  padding-top: 20px;
+}
+.favouritesButton {
+  background-color: rgb(0, 132, 255);
+  color: #fff;
+  display: flex;
+  padding: 3%;
+  cursor: pointer;
+  border-radius: 5%;
+}
+.favouritesButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+img.detailImage {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 3%;
+}
+.detailPage {
+  padding: 15px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  margin: 20px 5px 0 5px;
+}
+.detailHeader {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.return {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: blue;
+}
+.row {
 }

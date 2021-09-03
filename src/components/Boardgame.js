@@ -7,7 +7,7 @@ import './Boardgame.css';
 const Boardgame = (props) => {
     const favourites = useContext(FavouritesContext);
     
-    const{name, gameId, image, rating, yearPublished} = props.boardgame;
+    const{name, gameId, image, averageRating, yearPublished} = props.boardgame;
     return (
         <div className="card">
             <div className="properties-container">
@@ -19,7 +19,7 @@ const Boardgame = (props) => {
             
             </Link>
             </p>
-            <small>{'Rating: '}{Number.parseFloat(rating).toFixed(1)}</small>
+            <small>{'Rating: '}{Number.parseFloat(averageRating).toFixed(1)}</small>
             <div className='year'>{yearPublished}</div>
             </div>
             <div className='favourites-container'>
