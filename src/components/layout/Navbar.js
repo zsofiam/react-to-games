@@ -1,32 +1,31 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
+import { FavouritesContext } from "./../FavouritesContext";
 import { PageContext } from "../../contexts/PageContext";
 
 export default function Navbar() {
+  //let favourites = JSON.parse(localStorage.getItem("favourites"));
+  const favourites = useContext(FavouritesContext);
   const { decrementPageNumber, incrementPageNumber } = useContext(PageContext);
-
-  return (
-    <div className="navbar">
-      <span>
-        Welcome <span className="username">User</span>!
-      </span>
-      <a href="/">
-        Favourite games: <span id="favourite-counter">0</span>
-      </a>
-      <form>
-        <input
-          type="text"
-          placeholder="Search"
-          className="mr-2"
-          name="Search"
-        />
-        <input type="submit" value="Search" />
-      </form>
-      <a href="/" onClick={decrementPageNumber}>
-        Previous
-      </a>
-      <a href="/" onClick={incrementPageNumber}>
-        Next
-      </a>
-    </div>
-  );
+    return (
+        <div className="navbar">
+            <span>Welcome {' '}
+                <span className="username">User</span>!
+            </span>
+            <a href="/favourites">Favourite games:{' '} 
+                <span id="favourite-counter">
+                    {favourites[0]
+                    ?
+                    favourites[0].length
+                    :
+                    "0"}
+                </span>
+            </a>
+            <a href="/" onClick={decrementPageNumber}>
+              Previous Page
+            </a>
+            <a href="/" onClick={incrementPageNumber}>
+              Next Page
+            </a>
+        </div>
+    );
 }
